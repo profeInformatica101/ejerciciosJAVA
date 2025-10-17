@@ -36,5 +36,9 @@ public class Ejercicio13 {
 		System.out.println("Aprobados: " + aprobado);
 		System.out.println("Condicionado: " + condicionado);
 		System.out.println("Suspenso: " + suspenso);
+		
+		
+		sc.close();
 	}
+
 }
