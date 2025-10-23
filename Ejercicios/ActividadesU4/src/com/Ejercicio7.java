@@ -12,6 +12,7 @@ public class Ejercicio7 {
             System.out.println(i+" -->"+ esPrimo(i)) ;                                                                                                                                                                                                                                                                                                                                     
        }
     }
+    public static void Test() {}
                                                                                                                                                                                                                                                                                                                                               
      public static boolean esPrimo(int n) {
          for(int i=n-1; i>1 ; i--) {
