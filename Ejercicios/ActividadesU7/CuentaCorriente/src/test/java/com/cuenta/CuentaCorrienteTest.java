@@ -41,9 +41,16 @@ class CuentaCorrienteTest {
 
 	
 	@Test
-	@DisplayName("Prueba unitaria sacar dinero")
+	@DisplayName("Sacar dinero positivo")
 	void testSacarDinero() {
 	
 		assertTrue(cc.sacarDinero(20));
 	}
+	@Test
+	@DisplayName("Sacar dinero negativo")
+	void testSacarDineroNegativo() {
+		assertFalse(cc.sacarDinero(-3));
+	}
+	
+	
 }

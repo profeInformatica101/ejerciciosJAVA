@@ -37,11 +37,15 @@ public class CuentaCorriente {
 	}
 	
 	boolean sacarDinero(double cantidad) {
-		if( this.limiteDeDescubierto <=  this.saldo - cantidad) {
-			this.saldo = this.saldo - cantidad;
-			return true;
+		if(cantidad > 0) {
+			if( this.limiteDeDescubierto <=  this.saldo - cantidad) {
+				this.saldo = this.saldo - cantidad;
+				return true;
+			}else {
+				System.out.println("Has superado el límite de descubierto");
+				return false;
+			}
 		}else {
-			System.out.println("Has superado el límite de descubierto");
 			return false;
 		}
 		
