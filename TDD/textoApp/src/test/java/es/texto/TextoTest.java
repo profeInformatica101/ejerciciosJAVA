@@ -104,7 +104,7 @@ class TextoTest {
     // AÑADIR CARACTERES (final)
     // -------------------------
 
-    /**  @Test
+    @Test
     @DisplayName("anadirFinal(char): añade al final si hay espacio y devuelve true")
     void anadirFinal_char_conEspacio_devuelveTrue() {
         boolean resultadoEsperado = true;
@@ -119,15 +119,15 @@ class TextoTest {
         int longitud = texto.longitud();
         assertEquals(longitudEsperada, longitud, "La longitud debe incrementarse tras añadir un carácter");
     }
-
+   
     @Test
     @DisplayName("anadirFinal(char): si está lleno no modifica y devuelve false")
     void anadirFinal_char_sinEspacio_devuelveFalse() {
         Texto t = new Texto("12345", 5);
 
-        boolean resultadoEsperado = false;
+       // boolean resultadoEsperado = false;
         boolean resultado = t.anadirFinal('X');
-        assertEquals(resultadoEsperado, resultado, "Debe devolver false si no hay espacio para añadir al final");
+        assertFalse( resultado, "Debe devolver false si no hay espacio para añadir al final");
 
         String contenidoEsperado = "12345";
         String contenido = t.getContenido();
@@ -137,29 +137,29 @@ class TextoTest {
     // -------------------------
     // AÑADIR CARACTERES (inicio)
     // -------------------------
-
+   
     @Test
     @DisplayName("anadirInicio(char): añade al inicio si hay espacio y devuelve true")
     void anadirInicio_char_conEspacio_devuelveTrue() {
         Texto t = new Texto("BC", 5);
 
-        boolean resultadoEsperado = true;
+        //boolean resultadoEsperado = true;
         boolean resultado = t.anadirInicio('A');
-        assertEquals(resultadoEsperado, resultado, "Debe devolver true si se añade el carácter al inicio");
+        assertTrue(resultado, "Debe devolver true si se añade el carácter al inicio");
 
         String contenidoEsperado = "ABC";
         String contenido = t.getContenido();
         assertEquals(contenidoEsperado, contenido, "Debe anteponer el carácter al contenido existente");
     }
-
+    
     @Test
     @DisplayName("anadirInicio(char): si está lleno no modifica y devuelve false")
     void anadirInicio_char_sinEspacio_devuelveFalse() {
         Texto t = new Texto("12345", 5);
 
-        boolean resultadoEsperado = false;
+        //boolean resultadoEsperado = false;
         boolean resultado = t.anadirInicio('X');
-        assertEquals(resultadoEsperado, resultado, "Debe devolver false si no hay espacio para añadir al inicio");
+        assertFalse( resultado, "Debe devolver false si no hay espacio para añadir al inicio");
 
         String contenidoEsperado = "12345";
         String contenido = t.getContenido();
@@ -187,7 +187,7 @@ class TextoTest {
         int longitud = t.longitud();
         assertEquals(longitudEsperada, longitud, "La longitud debe coincidir con el máximo tras añadir");
     }
-
+  
     @Test
     @DisplayName("anadirFinal(String): si no cabe NO modifica y devuelve false")
     void anadirFinal_string_noCabe_noModifica_devuelveFalse() {
@@ -201,7 +201,7 @@ class TextoTest {
         String contenido = t.getContenido();
         assertEquals(contenidoEsperado, contenido, "No debe modificar el contenido si la cadena no cabe");
     }
-
+   
     @Test
     @DisplayName("anadirFinal(String): lanza excepción si la cadena es null (mensaje comprobado)")
     void anadirFinal_string_null_lanzaExcepcion() {
@@ -213,8 +213,8 @@ class TextoTest {
         String mensaje = ex.getMessage();
         assertEquals(mensajeEsperado, mensaje, "Mensaje de error incorrecto para cadena null");
     }
-
-    @Test
+ 
+    @Test                                   
     @DisplayName("anadirFinal(String): añadir \"\" no cambia contenido y devuelve true")
     void anadirFinal_string_vacia_noCambia_devuelveTrue() {
         Texto t = new Texto("ABC", 5);
@@ -231,35 +231,35 @@ class TextoTest {
     // -------------------------
     // AÑADIR CADENA (inicio)
     // -------------------------
-
+  
     @Test
     @DisplayName("anadirInicio(String): añade cadena completa al inicio si cabe y devuelve true")
     void anadirInicio_string_cabe_devuelveTrue() {
         Texto t = new Texto("lo", 5);
 
-        boolean resultadoEsperado = true;
+        //boolean resultadoEsperado = true;
         boolean resultado = t.anadirInicio("Hel");
-        assertEquals(resultadoEsperado, resultado, "Debe devolver true si la cadena cabe al inicio");
+        assertTrue( resultado, "Debe devolver true si la cadena cabe al inicio");
 
         String contenidoEsperado = "Hello";
         String contenido = t.getContenido();
         assertEquals(contenidoEsperado, contenido, "Debe anteponer la cadena al contenido correctamente");
     }
-
+  
     @Test
     @DisplayName("anadirInicio(String): si no cabe NO modifica y devuelve false")
     void anadirInicio_string_noCabe_noModifica_devuelveFalse() {
         Texto t = new Texto("ABCD", 5);
 
-        boolean resultadoEsperado = false;
+      //  boolean resultadoEsperado = false;
         boolean resultado = t.anadirInicio("XY");
-        assertEquals(resultadoEsperado, resultado, "Debe devolver false si la cadena no cabe al inicio");
+        assertFalse( resultado, "Debe devolver false si la cadena no cabe al inicio");
 
         String contenidoEsperado = "ABCD";
         String contenido = t.getContenido();
         assertEquals(contenidoEsperado, contenido, "No debe modificar el contenido si la cadena no cabe");
     }
-
+    
     @Test
     @DisplayName("anadirInicio(String): lanza excepción si la cadena es null (mensaje comprobado)")
     void anadirInicio_string_null_lanzaExcepcion() {
@@ -271,7 +271,7 @@ class TextoTest {
         String mensaje = ex.getMessage();
         assertEquals(mensajeEsperado, mensaje, "Mensaje de error incorrecto para cadena null");
     }
-
+  
     @Test
     @DisplayName("anadirInicio(String): añadir \"\" no cambia contenido y devuelve true")
     void anadirInicio_string_vacia_noCambia_devuelveTrue() {
@@ -289,7 +289,7 @@ class TextoTest {
     // -------------------------
     // CONTEO DE VOCALES
     // -------------------------
-
+   
     @Test
     @DisplayName("contarVocales(): 0 si el texto está vacío")
     void contarVocales_textoVacio_esCero() {
@@ -297,7 +297,7 @@ class TextoTest {
         int resultado = texto.contarVocales();
         assertEquals(resultadoEsperado, resultado, "El número de vocales en un texto vacío debe ser 0");
     }
-
+   
     @Test
     @DisplayName("contarVocales(): cuenta vocales mayúsculas y minúsculas (AEIOUaeiou)")
     void contarVocales_cuentaMayusMinus() {
@@ -307,7 +307,7 @@ class TextoTest {
         int resultado = t.contarVocales();
         assertEquals(resultadoEsperado, resultado, "Debe contar vocales ignorando mayúsculas/minúsculas y símbolos");
     }
-
+    /*
     @Test
     @DisplayName("contarVocales(): no cuenta letras no vocales ni signos")
     void contarVocales_noCuentaConsonantesNiSignos() {
