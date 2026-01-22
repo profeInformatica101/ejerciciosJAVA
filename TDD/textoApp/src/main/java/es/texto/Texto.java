@@ -14,7 +14,7 @@ public class Texto {
 
 	private int maxLongitud;
 	private String contenido;
-	
+	private final String VOCALES = "aeiouAEIOUáéíóúù";
 	public Texto(int maxLongitud) {
 		if(maxLongitud<=0)
 			throw new IllegalArgumentException("maxLongitud debe ser > 0");
@@ -111,13 +111,19 @@ public class Texto {
 
 	@Override
 	public String toString() {
-		return "Texto [maxLongitud=" + maxLongitud + ", contenido=" + contenido + "]";
+		return this.contenido;
 	}
 
 
 	public int contarVocales() {
-		// TODO Auto-generated method stub
-		return 0;
+		int contador = 0;
+		for(int i=0; i<contenido.length(); i++) {
+			char c = this.contenido.charAt(i);
+			if(VOCALES.indexOf(c) != -1 ) {
+				contador++;
+			}
+		}
+		return contador;
 	}
 
 

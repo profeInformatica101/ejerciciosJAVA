@@ -307,7 +307,7 @@ class TextoTest {
         int resultado = t.contarVocales();
         assertEquals(resultadoEsperado, resultado, "Debe contar vocales ignorando mayúsculas/minúsculas y símbolos");
     }
-    /*
+   
     @Test
     @DisplayName("contarVocales(): no cuenta letras no vocales ni signos")
     void contarVocales_noCuentaConsonantesNiSignos() {
@@ -317,7 +317,7 @@ class TextoTest {
         int resultado = t.contarVocales();
         assertEquals(resultadoEsperado, resultado, "No debe contar consonantes ni signos como vocales");
     }
-
+   
     // -------------------------
     // CONSISTENCIA DE MÉTODOS
     // -------------------------
@@ -340,9 +340,9 @@ class TextoTest {
         int longitud = t.longitud();
         assertEquals(longitudEsperada, longitud, "La longitud debe ser coherente con el contenido final");
 
-        boolean resultadoEsperado = false;
+       // boolean resultadoEsperado = false;
         boolean resultado = t.anadirFinal('X');
-        assertEquals(resultadoEsperado, resultado, "Debe devolver false al intentar añadir con el texto lleno");
+        assertFalse( resultado, "Debe devolver false al intentar añadir con el texto lleno");
 
         String contenidoEsperadoTrasFallo = "ZbcA12";
         String contenidoTrasFallo = t.getContenido();
@@ -355,6 +355,6 @@ class TextoTest {
         Texto t = new Texto("Hola", 10);
         assertEquals("Hola", t.toString(), "toString() debería devolver el contenido");
     }
-    */
+ 
 
 }
