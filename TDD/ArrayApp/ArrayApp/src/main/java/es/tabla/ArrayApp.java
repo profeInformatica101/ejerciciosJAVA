@@ -76,10 +76,10 @@ public class ArrayApp {
 		return nueva_tabla;
 	}
 
-	public int[] sinRepetidos(int[] t) {
+	public int[] sinRepetidos(int[] tablaNumero) {
 		int [] sinrepetidos = {};
 		
-		for(int numero : t) {
+		for(int numero : tablaNumero) {
 			if(!existe(numero, sinrepetidos)) {
 				sinrepetidos= Arrays.copyOf(sinrepetidos, sinrepetidos.length+1);
 				sinrepetidos[sinrepetidos.length-1] = numero;
