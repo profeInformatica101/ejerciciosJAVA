@@ -46,8 +46,13 @@ public class App
                  { 1, 1, 1, 1 }
          };
     	 
-    	 System.out.println("fila 1:" + Arrays.toString(m[0]));
-    	 System.out.println("fila 2:" +Arrays.toString(m[1]));
+    	 ArrayApp app = new ArrayApp();
+    	 System.out.println("FILA: "+Arrays.toString(app.obtenerFilaPublic(m, 1) ));
+    	 
+    	 System.out.println("COLUMNA"+Arrays.toString(app.obtenerColumnaPublic(m, 1) ));
+    	 
+    	 
+    	 
     }
     
     

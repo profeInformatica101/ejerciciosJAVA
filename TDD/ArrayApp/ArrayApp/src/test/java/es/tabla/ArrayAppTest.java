@@ -190,9 +190,17 @@ class ArrayAppTest {
                 { 1, 1, 1, 1 }
         };
         assertTrue(app.esMatrizMagica(m));
+        
+        int[][] m2 = {
+                { 1, 2, 1, 1 },
+                { 2, 0, 1, 1 },
+                { 0, 2, 1, 1 },
+                { 1, 1, 1, 1 }
+        };
+        assertFalse(app.esMatrizMagica(m2));
     }
 
-    /**   @Test
+     @Test
     @DisplayName("esMatrizMagica: false si alguna fila/columna no coincide")
     void esMatrizMagica_false() {
         int[][] m = {
@@ -203,7 +211,7 @@ class ArrayAppTest {
         };
         assertFalse(app.esMatrizMagica(m));
     }
-
+  
     @Test
     @DisplayName("esMatrizMagica: tamaño distinto de 4x4 lanza excepción (mensaje comprobado)")
     void esMatrizMagica_tamanoInvalido() {
@@ -214,7 +222,7 @@ class ArrayAppTest {
 
         assertEquals("matriz debe ser 4x4", ex.getMessage());
     }
-
+   
     // -------------------------
     // 8) rellenaSumaIndices (5x5)
     // -------------------------
@@ -248,7 +256,7 @@ class ArrayAppTest {
         int[] t = { -5, 10, 3, 10, 2 };
         assertEquals(10, app.maximo(t));
     }
-
+ 
     @Test
     @DisplayName("maximo(array): null lanza excepción (mensaje comprobado)")
     void maximo_array_null() {
@@ -256,7 +264,7 @@ class ArrayAppTest {
                 () -> app.maximo(null));
         assertEquals("array no puede ser null", ex.getMessage());
     }
-
+    /**
     @Test
     @DisplayName("maximo(array): vacío lanza excepción (mensaje comprobado)")
     void maximo_array_vacio() {
