@@ -5,6 +5,11 @@ public class Hora {
 	protected int minuto;
 	
 	public Hora(int hora, int minuto) {
+		if((hora>24 || hora <0))
+			throw new IllegalArgumentException("Tiene que ser una hora correcta");
+		if((minuto>60 || this.minuto<0))
+			throw new IllegalArgumentException("Los minutos tienen que tener una hora correcta");
+	
 		this.hora = hora;
 		this.minuto = minuto;
 	}

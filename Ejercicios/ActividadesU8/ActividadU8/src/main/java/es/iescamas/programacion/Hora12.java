@@ -5,6 +5,7 @@ public class Hora12 extends Hora{
 	
 	public Hora12(int hora, int minuto, Periodo periodo) {
 		super(hora, minuto);
+		this.setHora(hora);
 		this.periodo = periodo;
 	}
 	

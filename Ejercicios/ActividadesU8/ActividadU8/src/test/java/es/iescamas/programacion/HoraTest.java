@@ -21,6 +21,18 @@ class HoraTest {
 	}
 
 	@Test
+	@DisplayName("Constructor con argumentos invalidos")
+	void testConstructorConArgumentosInvalidos() {
+		IllegalArgumentException ex = assertThrows(IllegalArgumentException.class, 
+				()->{ hora = new Hora(-1,3);});
+		
+		String mensajeEsperado = "Tiene que ser una hora correcta";
+		String mensaje = ex.getMessage().toString();
+		
+		assertEquals(mensajeEsperado, mensaje);
+	}
+	
+	@Test
 	@DisplayName("Prueba de toString")
 	void testtoString() {
 		String horaEsperada = "10:05";
