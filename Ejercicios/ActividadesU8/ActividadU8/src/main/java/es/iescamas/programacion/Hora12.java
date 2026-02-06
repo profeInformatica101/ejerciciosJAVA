@@ -4,9 +4,9 @@ public class Hora12 extends Hora{
 	protected Periodo periodo;
 	
 	public Hora12(int hora, int minuto, Periodo periodo) {
-		super(hora, minuto);
-		this.setHora(hora);
-		this.periodo = periodo;
+	    super(hora, minuto);
+	    this.periodo = (hora > 12) ? Periodo.PM : periodo;
+	    this.setHora(hora);
 	}
 	
 	@Override
@@ -36,16 +36,16 @@ public class Hora12 extends Hora{
 	}
 	@Override
 	public boolean setHora(int valor) {
-		if((valor > 23) || (valor <=0)) return false;
-	
-		if(valor > 12) {
-			super.setHora(valor-12);
-			periodo = Periodo.PM; 
-		}
-		
-		
-		return true;
+	    if (valor < 1 || valor > 23) return false;
+
+	    if (valor <= 12) {
+	        super.hora = valor;
+	        // si quieres: periodo = Periodo.AM; (depende del diseño)
+	    } else {
+	        super.hora = valor - 12;
+	        periodo = Periodo.PM;
+	    }
+	    return true;
 	}
-	
 
 }
