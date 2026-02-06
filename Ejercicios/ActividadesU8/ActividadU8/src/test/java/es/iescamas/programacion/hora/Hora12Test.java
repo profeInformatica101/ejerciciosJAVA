@@ -1,9 +1,12 @@
-package es.iescamas.programacion;
+package es.iescamas.programacion.hora;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import es.iescamas.programacion.hora.Hora12;
+import es.iescamas.programacion.hora.Periodo;
 
 class Hora12Test {
 

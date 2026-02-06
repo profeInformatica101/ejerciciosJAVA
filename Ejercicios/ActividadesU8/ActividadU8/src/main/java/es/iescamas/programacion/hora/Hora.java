@@ -1,4 +1,4 @@
-package es.iescamas.programacion;
+package es.iescamas.programacion.hora;
 
 public class Hora {
 	protected int hora;
