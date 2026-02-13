@@ -1,5 +1,7 @@
 package es.iescamas.estructura;
 
+import java.util.Arrays;
+
 public class ListaArray {
 
 	private Integer[] tabla;
@@ -15,13 +17,63 @@ public class ListaArray {
 		return numElementos;
 	}
 	public void addFinal(Integer n) {
-		if(numElementos < tabla.length) {
-			
-			tabla[numElementos] = n;
-			
-		}else {
-			
+		if(numElementos >= tabla.length) {
+			tabla = Arrays.copyOf(tabla, tabla.length+1);
 		}
+			tabla[numElementos] = n;
+			numElementos++;
+		
 	}
+
+	public Integer[] getTabla() {
+		return tabla;
+	}
+	
+	
+	public Integer get(int index) {
+		if(index < 0 || index >= numElementos)
+			throw new IllegalArgumentException("Fuera de rango");
+	
+		return tabla[index];
+	
+	}
+	
+	public Integer remove(int index) {
+		if(index < 0 || index >= numElementos)
+			throw new IllegalArgumentException("Fuera de rango");
+	
+		Integer resultado = tabla[index];
+		
+		//	 0   1   2   3   4   5  6
+		// | 3 | 4 | 5 | 7 | 7 |  |   |numElementos=5
+		// remove 1
+		// | 3  |  | 5 | 7 | 7 |
+		// | =  | <-  <-  <-   | numElemento=4  
+		for(int i=index; i<numElementos-1; i++) {
+			tabla[i] = tabla[i+1];
+		}
+		numElementos--;
+		return resultado;
+	}
+	
+	public int indexOf(Integer n) {
+		if(n < 0 || n >= numElementos)
+			throw new IllegalArgumentException("Fuera de rango");
+	
+		return tabla[n];
+	}
+
+	@Override
+	public String toString() {
+		Integer[] tabla_a_imprimir = new Integer[numElementos];
+		for(int i=0; i<numElementos; i++) {
+			tabla_a_imprimir[i] = tabla[i];
+		}
+		
+		
+		return Arrays.toString(tabla_a_imprimir);
+	}
+	
+	
 	
 }
