@@ -103,8 +103,8 @@ class ListaArrayTest {
 	
 	@Test
 	void testIndexOf() {
-		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, ()->lista.indexOf(0));
-		String mensajeEsperado = "Fuera de rango";
+		IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, ()->lista.indexOf(null));
+		String mensajeEsperado = "No puede ser null";
 		String mensaje = exception.getMessage().toString();
 		
 		assertEquals(mensajeEsperado, mensaje);
@@ -113,8 +113,8 @@ class ListaArrayTest {
 		lista.addFinal(6);
 		lista.addFinal(13);
 		
-		int resultadoEspero = 6;
-		int resultado = lista.indexOf(1);
+		int resultadoEspero = 1;
+		int resultado = lista.indexOf(6);
 		
 		assertEquals(resultadoEspero, resultado);
 	}

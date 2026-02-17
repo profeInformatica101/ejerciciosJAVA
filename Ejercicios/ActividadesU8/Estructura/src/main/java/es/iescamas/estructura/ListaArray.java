@@ -57,10 +57,15 @@ public class ListaArray {
 	}
 	
 	public int indexOf(Integer n) {
-		if(n < 0 || n >= numElementos)
-			throw new IllegalArgumentException("Fuera de rango");
+		if(n == null)
+			throw new IllegalArgumentException("No puede ser null");
 	
-		return tabla[n];
+		for(int i=0;i<this.size(); i++) {
+			if(n.equals(tabla[i]))
+				return i;
+		}
+		
+		return -1;
 	}
 
 	@Override
