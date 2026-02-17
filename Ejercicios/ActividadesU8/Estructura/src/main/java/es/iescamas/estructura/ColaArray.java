@@ -21,11 +21,9 @@ public class ColaArray extends ListaArray {
 	}
 
 	public Integer first() {
-		if(isEmpty())
-			return null;
-		return super.get(0);
+		 return this.isEmpty() ? null : super.get(0);
 	}
-	
+
 	
 	
 }

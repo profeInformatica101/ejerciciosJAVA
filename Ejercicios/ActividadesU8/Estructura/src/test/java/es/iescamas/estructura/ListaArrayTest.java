@@ -62,7 +62,7 @@ class ListaArrayTest {
 		lista.addFinal(8);
 		// [8]
 		lista.remove(0);
-		Integer[] resultadoEsperado = {8, 8};
+		Integer[] resultadoEsperado = {8,null};
 		Integer[] resultado = lista.getTabla();
 		int numElementosEsperado = 1;
 		int numElementos = lista.size();
@@ -87,7 +87,7 @@ class ListaArrayTest {
 		int retornaRemoveEsperado = 9;
 		int retornaRemove = lista.remove(1);
 		
-		resultadoEsperado = new Integer[] {8,6,5,4,4};
+		resultadoEsperado = new Integer[] {8,6,5,4,null};
 		assertEquals(retornaRemoveEsperado, retornaRemove);
 		assertArrayEquals(resultadoEsperado, lista.getTabla());
 		

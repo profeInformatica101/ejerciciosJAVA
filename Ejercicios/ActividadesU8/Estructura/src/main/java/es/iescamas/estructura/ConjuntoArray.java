@@ -10,14 +10,20 @@ public class ConjuntoArray extends ListaArray{
 	}
 	
 	public boolean add(Integer n) {
-		if(!contains(n)) {
-			super.addFinal(n);
-			return true;
-		}
-		return false;
-			
+		if (n == null)
+	         throw new IllegalArgumentException("No puede ser null");
+	      
+		if (!this.contains(n)) {
+	         super.addFinal(n);
+	         return true;
+	      } else {
+	         return false;
+	      }
 	}
 	public boolean removeValue(Integer n) {
+		 if (n == null) 
+	         throw new IllegalArgumentException("No puede ser null");
+	       
 		if(contains(n)) {
 			int index = super.indexOf(n);
 			super.remove(index);
