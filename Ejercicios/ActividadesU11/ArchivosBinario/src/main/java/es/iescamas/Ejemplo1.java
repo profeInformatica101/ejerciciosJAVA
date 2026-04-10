@@ -10,14 +10,11 @@ import java.io.IOException;
  */
 public class Ejemplo1 {
 	public static void main(String[] args) {
-		try {
-			DataOutputStream dos = new DataOutputStream(new FileOutputStream("numeros.dat"));
+		try(DataOutputStream dos = new DataOutputStream(new FileOutputStream("numeros.dat"))){
 			
 			for(int i=1; i<=10; i++) {
 				dos.writeInt(i*10);
 			}
-			
-			dos.close();
 		
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
