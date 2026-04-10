@@ -10,23 +10,26 @@ import java.io.ObjectInputStream;
  * Buscar por ID
  */
 public class Ejemplo10 {
-	public static void main(String[] args) throws FileNotFoundException, IOException {
+	public static void main(String[] args){
+		final int ID_A_BUSCAR = 2;
 		
-		ObjectInputStream ois = new ObjectInputStream(new FileInputStream("alumnos.datos"));
-		int id_a_buscar = 2;
-		try {
+		try(ObjectInputStream ois = new ObjectInputStream(new FileInputStream("alumnos.datos"))){
 			while(true) {
 				Alumno a = (Alumno) ois.readObject();
-				if(a.id == id_a_buscar) {
+				if(a.id == ID_A_BUSCAR) {
 					System.out.println(a);
 				}
 			}
-		}catch(EOFException e) {
+		}catch(EOFException ex) {
+			ex.printStackTrace();
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
-		}catch (ClassNotFoundException e) {
-
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-		ois.close();
+		
+
 	}
 }
