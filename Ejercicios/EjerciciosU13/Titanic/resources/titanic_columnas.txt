@@ -1,0 +1,90 @@
+
+TITANIC DATASET – DESCRIPCIÓN DE COLUMNAS
+========================================
+
+Este archivo describe las columnas del dataset titanic.csv que se utiliza
+para prácticas de programación, lectura de ficheros y análisis de datos.
+
+Cada fila del archivo representa un pasajero del Titanic.
+
+------------------------------------------------------------
+
+PassengerId
+Identificador único del pasajero dentro del dataset.
+
+Survived
+Indica si el pasajero sobrevivió al hundimiento.
+0 = Murió
+1 = Sobrevivió
+
+Pclass
+Clase del billete del pasajero.
+1 = Primera clase
+2 = Segunda clase
+3 = Tercera clase
+
+Name
+Nombre completo del pasajero.
+
+Sex
+Sexo del pasajero.
+male = hombre
+female = mujer
+
+Age
+Edad del pasajero en años.
+Puede aparecer vacío si no se conoce.
+
+SibSp
+Número de hermanos o cónyuges que viajaban con el pasajero.
+
+Parch
+Número de padres o hijos que viajaban con el pasajero.
+
+Ticket
+Número del billete del pasajero.
+
+Fare
+Precio del billete.
+
+Cabin
+Número de cabina asignada al pasajero.
+Puede aparecer vacío si no se registró.
+
+Embarked
+Puerto donde el pasajero embarcó en el Titanic.
+
+C = Cherbourg
+Q = Queenstown
+S = Southampton
+
+------------------------------------------------------------
+
+Ejemplo de fila del dataset:
+
+1,0,3,Braund Mr. Owen Harris,male,22,1,0,A/5 21171,7.25,,S
+
+Interpretación:
+
+PassengerId -> 1
+Survived -> 0 (murió)
+Pclass -> 3 (tercera clase)
+Name -> Braund Mr. Owen Harris
+Sex -> male
+Age -> 22
+SibSp -> 1
+Parch -> 0
+Ticket -> A/5 21171
+Fare -> 7.25
+Cabin -> vacío
+Embarked -> S (Southampton)
+
+------------------------------------------------------------
+
+Este dataset se utiliza frecuentemente para:
+
+- Aprender a leer archivos CSV
+- Practicar programación con Java
+- Analizar datos
+- Aprender Machine Learning
+- Realizar ejercicios de TDD
